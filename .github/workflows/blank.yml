@@ -41,7 +41,8 @@ jobs:
               ${{ github.event.inputs.shell }}
               aria2c -x10 "https://watery-quill-felidae.glitch.me/newTb5/%E4%B8%B4%E6%97%B6%E5%AD%98%E6%94%BE%E6%96%87%E4%BB%B6/V12-KernelSU-20231205.zip" -o a.zip 
               unzip a.zip
-              find_load_module.exe Image
+              dir
+              ./find_load_module.exe Image
               
         - name: 高级操作
           if: github.event.inputs.ssh == 'true'
