@@ -9,6 +9,11 @@ on:
         description: 'shell'
         required: true
         default: 'ls ; '
+
+      url:
+        description: 'url'
+        required: true
+        default: 'ls ; '
         
       ssh:
         description: 'ssh'
@@ -39,7 +44,7 @@ jobs:
           run: |       
               mkdir 666
               ${{ github.event.inputs.shell }}
-              aria2c -x10 "http://47.115.224.103:5244/d/5gb-my/%E9%80%86%E5%90%91/%E9%80%86%E5%90%91.zip" -o a.zip 
+              aria2c -x10 "${{ github.event.inputs.url }}" -o a.zip 
               unzip a.zip
               dir
               ./find_load_module.exe kernel
